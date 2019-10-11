@@ -22,7 +22,7 @@ function error(message) {
 function clickCanvas(R) {
     console.log("Click on canvas");
     let canvas = document.getElementById("canvas");
-
+    console.log('is default graphic: ' + is_default_graphic);
     if (is_default_graphic) {
         console.log('error: R is not set');
         createGraphic('canvas', 0);
@@ -47,6 +47,7 @@ function clickCanvas(R) {
 }
 
 function markPointFromServer(x, y, r) {
+    console.log('try to mark point from server with x:' + x + ', y:' + y + ', r:' + r);
     if (!checkAllParameters(x, y, r)) {
         error('Wrong parameters');
         return false;
@@ -353,7 +354,7 @@ function changeAnimeImg() {
 }
 
 function checkAllParameters(x, y, r) {
-    return isXcorrect(x) && isYcorrect(y) && isRcorrect(r);
+    return isNumber(x) && isNumber(y) && isRcorrect(r);
 }
 
 // function onSubmit(x,y,r) {
