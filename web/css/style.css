@@ -107,8 +107,9 @@ input {
     text-align: center;
 }
 
-#goback{
-    color: #d2738a;
+input {
+    background-color: rgb(204, 151, 145);
+    color: black;
 }
 
 #error {

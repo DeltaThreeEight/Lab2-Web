@@ -1,6 +1,5 @@
 var simple_img = '<img id="b357_1m6_1" src="img/g-1.jpg"><br><br><img id="pic18" class="centered" src="img/18+.png" onclick="changeAnimeImg()">';
-var not_simple_img = '<img id="b357_1m6_2" src="img/g-2.jpeg"><br><br><input type="button" id="goback" class="centered" value="w0w.. g0 b4ck" onclick="changeAnimeImg()">';
-
+var not_simple_img = '<img id="b357_1m6_2" src="img/g-2.jpeg"><br><br><input type="button" class="centered" value="w0w.. g0 b4ck" onclick="changeAnimeImg()">';
 let prev_y = 0;
 let res = 0;
 let count = 0;
