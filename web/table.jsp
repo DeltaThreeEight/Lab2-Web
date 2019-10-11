@@ -1,19 +1,14 @@
 <%@ page import="Lab_2.Point" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="java.util.Collections" %><%--
-  Created by IntelliJ IDEA.
-  User: gosha
-  Date: 11.10.2019
-  Time: 10:18
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="java.util.Collections" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%!private StringBuilder answer;%>
 <jsp:useBean id="pointsBean" class="Lab_2.PointsTableBean" scope="session"/>
 <html>
 <head>
     <title>Результат проверки</title>
+    <link rel="stylesheet" href="css/style.css">
     <meta charset="utf-8">
 </head>
 <body>
