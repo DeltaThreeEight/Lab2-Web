@@ -107,10 +107,6 @@ input {
     text-align: center;
 }
 
-#goback{
-    color: #d2738a;
-}
-
 #error {
     color: red;
     width: 20px;
