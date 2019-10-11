@@ -86,18 +86,6 @@ function markPoint(x, y, r, hit) {
     context.stroke();
 }
 
-function ban() {
-    document.body.style.textAlign = 'center';
-    document.body.style.backgroundColor = 'black';
-    let tmp = document.createElement('div');
-    tmp.innerHTML = '<meta http-equiv="Content-Type" content="text/html; charset=utf-8">';
-    document.head.append(tmp.children[0]);
-    document.body.innerHTML = '<div style=\"margin-top: 60px;\"><span class=\"main-text\">先輩、私に優しくしてください。</span></div>' +
-        '<div class=\"auto-margin\">' +
-        '<img src=\"./img/eyes.gif\">' +
-        '</div>';
-}
-
 function egg() {
     let canvas = document.getElementById("canvas"),
         context = canvas.getContext("2d");
