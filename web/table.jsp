@@ -3,7 +3,6 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.Collections" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%!private StringBuilder answer;%>
 <jsp:useBean id="pointsBean" class="Lab_2.PointsTableBean" scope="session"/>
 <html>
 <head>
@@ -13,29 +12,28 @@
 </head>
 <body>
 <table class="results block centered">
-    <tr> <th>N</th> <th>X</th> <th>Y</th> <th>R</th> <th><b>Результат</b></th> <th>Показать </th> </tr>
+    <tr> <th>N</th> <th>X</th> <th>Y</th> <th>R</th> <th><b>Результат</b></th> </tr>
     <%
-    answer = new StringBuilder();
+        List<Point> list = pointsBean.getPoints();
 
-    List<Point> list = pointsBean.getPoints();
+        for (Point point : list) {
+    %>
+    <tr>
+        <td><%=point.getN() %></td>
+        <td><%=point.getX() %></td>
+        <td><%=point.getY() %></td>
+        <td><%=point.getR()%></td>
+        <td><%=point.isHit() ? "Попадание ＼(￣▽￣)／" : "Промах (╯︵╰,)" %></td>
 
-        while (list.size() > 10) {
-            list.remove(0);
-        }
+        <% if (list.get(0).getR() == point.getR()) { %>
+        <script>
+                parent.markPoint(<%=point.getX() %>, <%=point.getY() %>, <%=point.getR() %>, <%=point.isHit()   %>)
+        </script>
+        <% } %>
+    </tr>
+    <%}%>
 
-        List<Point> reversed = new ArrayList<>(list);
-        Collections.reverse(reversed);
 
-        for (Point point : reversed) {
-            if (point != null) {
-                answer.append(point);
-            } else {
-                answer.append("<tr> <td colspan='6'><b>Неверные аргументы</b></td> </tr>");
-            }
-        }
-
-%>
-    <%=answer%>
 </table>
 </body>
 </html>

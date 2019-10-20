@@ -2,6 +2,7 @@ package Lab_2;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class PointsTableBean implements Serializable {
@@ -23,6 +24,13 @@ public class PointsTableBean implements Serializable {
     }
 
     public List getPoints() {
-        return points;
+        while (points.size() > 10) {
+            points.remove(0);
+        }
+
+        List<Point> reversed = new ArrayList(points);
+        Collections.reverse(reversed);
+
+        return reversed;
     }
 }

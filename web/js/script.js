@@ -52,21 +52,22 @@ function markPointFromServer(x, y, r) {
         error('Wrong parameters');
         return false;
     } else {
-        fetch("./hit?hit=true&x_h=" + encodeURI(x) + "&y_h=" + encodeURI(y) + "&r_h=" + encodeURI(r), {
+        fetch("./check?&x_h=" + encodeURI(x) + "&y_h=" + encodeURI(y) + "&r_h=" + encodeURI(r), {
             method: 'GET',
             headers: {
                 'Content-Type': 'text/plain;charset=UTF-8'
             }
         })
-            .then(response=>response.text())
-            .then(hit=>markPoint(x, y, r, hit));
+
+
+        document.getElementById('iFrame').src = document.getElementById('iFrame').src
         return true;
     }
 }
 
 function markPoint(x, y, r, hit) {
     console.log('Marking point ' + x + ', ' + y + ', ' + r + ', ' + hit);
-    createGraphic('canvas', r);
+    //createGraphic('canvas', r);
     let canvas = document.getElementById("canvas"), context = canvas.getContext("2d");
 
     context.beginPath();
@@ -103,7 +104,7 @@ function egg() {
         context = canvas.getContext("2d");
     let img = new Image();
 
-    img.src = "./img/angryMushroom.jpg";
+    img.src = "./img/angryMushroom.png";
 
     context.drawImage(img, 25, 97);
 
@@ -115,12 +116,12 @@ function egg() {
         vx = Math.cos(currentAngle) * 100 - 100;
         vy = Math.sin(currentAngle) * 100;
 
-        createGraphic("canvas", 1);
+        createGraphic("canvas", r_out.value);
         context.drawImage(img, 25 - vx, 97 - vy);
         currentAngle += 0.05;
         if (currentAngle > 3.1) {
             clearInterval(int);
-            createGraphic("canvas", 1);
+            createGraphic("canvas", r_out.value);
         }
     }, 25);
 }

@@ -15,18 +15,14 @@ public class ControllerServlet extends HttpServlet {
 		String xString = request.getParameter("x_h");
 		String yString = request.getParameter("y_h");
 		String RString = request.getParameter("r_h");
-		String hit = request.getParameter("hit");
 
 		if (xString == null || yString == null || RString == null) {
-			if (hit != null && hit.equals("true"))
-				request.getServletContext().getRequestDispatcher("/hit").forward(request, response);
-			else
-				request.getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
-		} else {
 			if (request.getParameter("gname") != null)
 				request.getServletContext().getRequestDispatcher("/checkOrientation").forward(request, response);
 			else
-				request.getServletContext().getRequestDispatcher("/check").forward(request, response);
+				request.getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
+		} else {
+			request.getServletContext().getRequestDispatcher("/check").forward(request, response);
 		}
 	}
 

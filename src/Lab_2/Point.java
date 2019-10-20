@@ -3,13 +3,13 @@ package Lab_2;
 import java.io.Serializable;
 
 public class Point implements Serializable {
-    private int x;
+    private double x;
     private double y;
     private double R;
     private boolean hit;
     private int n;
 
-    Point (int x, double y, double r, int n){
+    Point (double x, double y, double r, int n){
         this.x = x;
         this.y = y;
         this.R = r;
@@ -26,15 +26,23 @@ public class Point implements Serializable {
         return square || triangle || circle;
     }
 
-    @Override
-    public String toString() {
-        String res = hit ? "Попадание ＼(￣▽￣)／" : "Промах (╯︵╰,)";
-        return String.format("<tr> <td>%s</td>" +
-                        " <td>%s</td>" +
-                        " <td>%s</td>" +
-                        " <td>%s</td>" +
-                        " <td><b>%s</b></td>" +
-                        "  <td><button onclick='parent.markPoint(%s, %s, %s, %s)'>+</button></td></tr>",
-                n, x, y, R, res, x, y, R, hit);
+    public double getX() {
+        return (double)Math.round(x * 1000d) / 1000d;
+    }
+
+    public double getY() {
+        return (double)Math.round(y * 1000d) / 1000d;
+    }
+
+    public double getR() {
+        return R;
+    }
+
+    public boolean isHit() {
+        return hit;
+    }
+
+    public int getN() {
+        return n;
     }
 }

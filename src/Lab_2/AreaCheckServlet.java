@@ -41,15 +41,15 @@ public class AreaCheckServlet extends HttpServlet {
 
         if (!load) {
             try {
-                int x = Integer.parseInt(request.getParameter("x_h").trim());
-                double y = Double.parseDouble(request.getParameter("y_h"));
-                double r = Double.parseDouble(request.getParameter("r_h"));
+                double x = Double.parseDouble(request.getParameter("x_h").trim());
+                double y = Double.parseDouble(request.getParameter("y_h").trim());
+                double r = Double.parseDouble(request.getParameter("r_h").trim());
 
                 Point p = new Point(x, y, r, bean.getN());
 
                 bean.addPoint(p);
             } catch (Exception e) {
-                //throw e;
+                e.printStackTrace();
                 request.getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
             }
         }

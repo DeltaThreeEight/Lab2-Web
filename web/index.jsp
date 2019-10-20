@@ -96,7 +96,7 @@
                     <input type="hidden" autocomplete="off" name="r_h" id="r_h_id" value="0">
                     <input type="hidden" autocomplete="off" name="y_h" id="y_h_id" value="0">
                     <input type="hidden" autocomplete="off" name="load" id="load" value="0">
-                    <p><input type="submit" value="Проверить" onclick="return markPointFromServer(x_out.value, y_out.value, r_out.value)"></p>
+                    <p><input type="submit" value="Проверить" ></p>
                 </form>
             </div>
         </div>
@@ -107,7 +107,7 @@
     </div>
 </div>
 <div class="block auto-margin">
-    <iframe name="result" src="check?x_h=1&r_h=2&y_h=1&load=1"></iframe>
+    <iframe id="iFrame" name="result" src="check?x_h=1&r_h=2&y_h=1&load=1"></iframe>
 </div>
     <img src="img/iwannasleep.gif" id="iwannasleep" onclick="doYouLikeAnImE()">
 </body>

@@ -17,18 +17,10 @@
         <servlet-name>CheckOrientationServlet</servlet-name>
         <servlet-class>Lab_2.CheckOrientationServlet</servlet-class>
     </servlet>
+
     <servlet-mapping>
         <servlet-name>CheckOrientationServlet</servlet-name>
         <url-pattern>/checkOrientation</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>HitCheckServlet</servlet-name>
-        <servlet-class>Lab_2.HitCheckServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>HitCheckServlet</servlet-name>
-        <url-pattern>/hit</url-pattern>
     </servlet-mapping>
     
     <filter>
